@@ -12,18 +12,18 @@ pipeline {
             }
         }
         stage('deploy'){
-            when{
-                env.BRANCH_NAME == 'master'
+            when {
+                expression { env.BRANCH_NAME == 'master' }
             }
             steps {
                 echo 'deployando a prod'
             }
         }
         stage('version'){
-            when{
-                expresion { ${version} == '08-06-20.2.0' }
+            when {
+                expresion { env.version == '08-06-20.2.0' }
             }
-            steps{
+            steps {
                 echo 'version correcta'   
             }
         }
