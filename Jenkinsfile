@@ -22,7 +22,7 @@ pipeline {
         }
         stage('version'){
             when {
-                expression { $VERSION == '08-06-20.1.0' }
+                expression { VERSION == '08-06-20.1.0' }
             }
             steps {
                 echo 'version correcta'   
