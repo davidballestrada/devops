@@ -16,12 +16,13 @@ pipeline {
                 expression { env.BRANCH_NAME == 'master' }
             }
             steps {
+                sh 'ls -l'
                 echo 'deployando a prod'
             }
         }
         stage('version'){
             when {
-                expression { ${VERSION} == '08-06-20.2.0' }
+                expression { ${VERSION} == '08-06-20.1.0' }
             }
             steps {
                 echo 'version correcta'   
