@@ -21,7 +21,7 @@ pipeline {
         }
         stage('version'){
             when {
-                expresion { env.version == '08-06-20.2.0' }
+                expression { ${VERSION} == '08-06-20.2.0' }
             }
             steps {
                 echo 'version correcta'   
@@ -31,4 +31,3 @@ pipeline {
     } 
    
 }
-
