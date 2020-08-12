@@ -11,4 +11,4 @@ jobs:
       run: |
         docker -v
         docker ps -a
-        docker run dtorres9/fifiglet:20200723 hola mundo
+        docker run dtorres9/fifiglet:20200723 figlet hola mundo
