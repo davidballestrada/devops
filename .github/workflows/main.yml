@@ -5,10 +5,16 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [10, 12]
+    
     steps:
     - uses: actions/checkout@v2
-    - name: docker test
-      run: |
-        docker -v
-        docker ps -a
-        docker run dtorres9/fifiglet:20200723 figlet hola mundo
+    - name: usando version node
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+      
