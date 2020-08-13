@@ -18,6 +18,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run build --if-present
+    - run:  pm2 start --name=CICDApp node.js
     - run: pm2 status
     - run: pm2 restart 0
       
